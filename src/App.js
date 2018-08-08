@@ -37,7 +37,7 @@ class BooksApp extends React.Component {
       <Route exact path="/" render={() => (
         <MainPage
         books={this.state.books}
-        moveShelf={this.moveShelf()}
+        moveShelf={this.moveShelf}
         />
         )} />
 

@@ -11,11 +11,11 @@ class Book extends Component {
 			<div className="book-top">
 			<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.image.thumbnail}"`}}></div>
 			<div className="book-shelf-changer">
-			<select
+			<select value={this.props.currentShelf}
 			onChange={(event) => this.props.moveShelf(
 				this.props.book, event.target.value
 				)}
-				value={this.props.currentShelf}
+				
 			>
 			<option value="move" disabled>Move to...</option>
 			<option value="currentlyReading">Currently Reading</option>
@@ -25,8 +25,8 @@ class Book extends Component {
 			</select>
 			</div>
 			</div>
-			<div className="book-title">{this.props.book.title}</div>
-			<div className="book-authors">{this.props.book.authors}</div>
+			<div className="book-title">{book.title}</div>
+			<div className="book-authors">{book.authors}</div>
 			</div>
 
 		);

@@ -9,6 +9,7 @@ class Book extends Component {
 	render () {
 		const { book } = this.props; 
 
+
 		let displayThumbnail = this.props.book.imageLinks;
 		if (displayThumbnail) {
 			displayThumbnail = this.props.book.imageLinks.smallThumbnail

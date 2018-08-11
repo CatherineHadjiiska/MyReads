@@ -32,13 +32,6 @@ class SearchPage extends Component {
 
 	render () {
 
-    this.state.searchedBooks.map((searchedBook) => {
-      searchedBook.shelf = "none"
-      this.props.books.map((book) => {
-        searchedBook.id === book.id ? searchedBook.shelf=book.shelf : ""
-      })
-    })
-
 		return(
 			<div className="search-books">
             <div className="search-books-bar">

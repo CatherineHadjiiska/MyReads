@@ -12,7 +12,7 @@ class BooksApp extends React.Component {
 
     this.state = {
     books: [],
-    {/*searchedBooks:[]*/}
+    searchedBooks:[]
 
   };
 

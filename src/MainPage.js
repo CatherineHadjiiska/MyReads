@@ -10,15 +10,11 @@ class MainPage extends Component {
 
 		return(
       <div className="list-books">
-
       <div className="list-books-title">
       <h1>MyReads</h1>
       </div>
-
       <div className="list-books-content">
       <div>
-
-
       <div className="bookshelf">
       <h2 className="bookshelf-title">Currently Reading</h2>
       <div className="bookshelf-books">
@@ -29,7 +25,7 @@ class MainPage extends Component {
         .map(book => (
         <li key={book.id} >
         <Book 
-        book ={book}
+        bookID ={book.id}
         title={book.title}
         image={book.imageLinks}
         authors={book.authors}
@@ -40,7 +36,6 @@ class MainPage extends Component {
       </ol>
       </div>
       </div>
-
       <div className="bookshelf">
       <h2 className="bookshelf-title">Want to Read</h2>
       <div className="bookshelf-books">
@@ -51,7 +46,7 @@ class MainPage extends Component {
         .map(book => (
         <li key={book.id} >
         <Book 
-        book ={book}
+        bookID ={book.id}
         title={book.title}
         image={book.imageLinks}
         authors={book.authors}
@@ -73,7 +68,7 @@ class MainPage extends Component {
         .map(book => (
          <li key={book.id} >
          <Book 
-        book ={book}
+        bookID ={book.id}
         title={book.title}
         image={book.imageLinks}
         authors={book.authors}
@@ -81,7 +76,8 @@ class MainPage extends Component {
         moveShelf={this.props.moveShelf}
          />
           </li>
-          ))}          
+          ))}           
+        }
            </ol>
            </div>
            </div>

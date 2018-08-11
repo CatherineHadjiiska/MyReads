@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+import * as BookAPI from "./BooksAPI"
 
 
 class Book extends Component {
 
+
+
 	render () {
-		const book = this.props; 
+		const { book } = this.props; 
+
+		let displayThumbnail = this.props.book.imageLinks;
+		if (displayThumbnail) {
+			displayThumbnail = this.props.book.imageLinks.smallThumbnail
+
+		} else {
+			displayThumbnail = ''
+		}
 
 		return (
 			<div className="book">
 			<div className="book-top">
-			<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.image.thumbnail}"`}}></div>
+			<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${displayThumbnail}")`}}></div>
 			<div className="book-shelf-changer">
 			<select value={this.props.currentShelf}
 			onChange={(event) => this.props.moveShelf(

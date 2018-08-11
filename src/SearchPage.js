@@ -31,6 +31,14 @@ class SearchPage extends Component {
 	}
 
 	render () {
+
+    this.state.searchedBooks.map((searchedBook) => {
+      searchedBook.shelf = "none"
+      this.props.books.map((book) => {
+        searchedBook.id === book.id ? searchedBook.shelf=book.shelf : ""
+      })
+    })
+
 		return(
 			<div className="search-books">
             <div className="search-books-bar">
@@ -52,10 +60,14 @@ class SearchPage extends Component {
             <div className="search-books-results">
               <ol className="books-grid">
               {
-              	this.state.searchedBooks.map(searchedBooks => (
-              		<li key={searchedBooks.id}>
+              	this.state.searchedBooks.map(searchedBook => (
+              		<li key={searchedBook.id}>
               		<Book 
-              		book={searchedBooks}
+              		bookID={searchedBook.id}
+                  title={searchedBook.title}
+                  authors={searchedBook.authors}
+                  image={searchedBook.imageLinks}
+                  currentShelf={this.props.moveShelf}
               		moveShelf={this.props.moveShelf}
               		/>
               		</li>

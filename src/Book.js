@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import * as BookAPI from "./BooksAPI"
 
 
@@ -11,13 +10,8 @@ class Book extends Component {
 		const { book } = this.props; 
 
 
-		let displayThumbnail = this.props.book.imageLinks;
-		if (displayThumbnail) {
-			displayThumbnail = this.props.book.imageLinks.smallThumbnail
+		let displayThumbnail = book.imageLinks ? book.imageLinks.smallThumbnail : '';
 
-		} else {
-			displayThumbnail = ''
-		}
 
 		return (
 			<div className="book">
@@ -46,8 +40,5 @@ class Book extends Component {
 	}
 }
 
-Book.PropTypes = {
-	book: PropTypes.object.isRequired
-}
 
 export default Book;

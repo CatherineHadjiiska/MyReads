@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as BookAPI from "./BooksAPI"
 
 
-class Book extends Component {
 
+class Book extends Component {
 
 
 	render () {
@@ -43,6 +44,10 @@ class Book extends Component {
 
 		);
 	}
+}
+
+Book.PropTypes = {
+	book: PropTypes.object.isRequired
 }
 
 export default Book;
